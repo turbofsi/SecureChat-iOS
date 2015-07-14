@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		188CD20B1B53612300E4AE1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD20A1B53612300E4AE1D /* main.m */; };
 		188CD20E1B53612300E4AE1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD20D1B53612300E4AE1D /* AppDelegate.m */; };
-		188CD2111B53612300E4AE1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD2101B53612300E4AE1D /* ViewController.m */; };
+		188CD2111B53612300E4AE1D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD2101B53612300E4AE1D /* MainViewController.m */; };
 		188CD2141B53612300E4AE1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2121B53612300E4AE1D /* Main.storyboard */; };
 		188CD2161B53612300E4AE1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2151B53612300E4AE1D /* Images.xcassets */; };
 		188CD2191B53612300E4AE1D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2171B53612300E4AE1D /* LaunchScreen.xib */; };
 		188CD2251B53612300E4AE1D /* SecureChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD2241B53612300E4AE1D /* SecureChatTests.m */; };
+		188CD2341B5362D900E4AE1D /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 188CD22E1B5362D900E4AE1D /* camera.png */; };
+		188CD2351B5362D900E4AE1D /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188CD22F1B5362D900E4AE1D /* camera@2x.png */; };
+		188CD2361B5362D900E4AE1D /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2301B5362D900E4AE1D /* friends.png */; };
+		188CD2371B5362D900E4AE1D /* friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2311B5362D900E4AE1D /* friends@2x.png */; };
+		188CD2381B5362D900E4AE1D /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2321B5362D900E4AE1D /* inbox.png */; };
+		188CD2391B5362D900E4AE1D /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2331B5362D900E4AE1D /* inbox@2x.png */; };
+		188CD23D1B536ED700E4AE1D /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD23C1B536ED700E4AE1D /* InboxViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +39,22 @@
 		188CD20A1B53612300E4AE1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188CD20C1B53612300E4AE1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		188CD20D1B53612300E4AE1D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		188CD20F1B53612300E4AE1D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		188CD2101B53612300E4AE1D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		188CD20F1B53612300E4AE1D /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		188CD2101B53612300E4AE1D /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		188CD2131B53612300E4AE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		188CD2151B53612300E4AE1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		188CD2181B53612300E4AE1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		188CD21E1B53612300E4AE1D /* SecureChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecureChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188CD2231B53612300E4AE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188CD2241B53612300E4AE1D /* SecureChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecureChatTests.m; sourceTree = "<group>"; };
+		188CD22E1B5362D900E4AE1D /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		188CD22F1B5362D900E4AE1D /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		188CD2301B5362D900E4AE1D /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
+		188CD2311B5362D900E4AE1D /* friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends@2x.png"; sourceTree = "<group>"; };
+		188CD2321B5362D900E4AE1D /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
+		188CD2331B5362D900E4AE1D /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
+		188CD23B1B536ED700E4AE1D /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
+		188CD23C1B536ED700E4AE1D /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +96,13 @@
 		188CD2071B53612300E4AE1D /* SecureChat */ = {
 			isa = PBXGroup;
 			children = (
+				188CD23A1B5362DE00E4AE1D /* images */,
 				188CD20C1B53612300E4AE1D /* AppDelegate.h */,
 				188CD20D1B53612300E4AE1D /* AppDelegate.m */,
-				188CD20F1B53612300E4AE1D /* ViewController.h */,
-				188CD2101B53612300E4AE1D /* ViewController.m */,
+				188CD20F1B53612300E4AE1D /* MainViewController.h */,
+				188CD2101B53612300E4AE1D /* MainViewController.m */,
+				188CD23B1B536ED700E4AE1D /* InboxViewController.h */,
+				188CD23C1B536ED700E4AE1D /* InboxViewController.m */,
 				188CD2121B53612300E4AE1D /* Main.storyboard */,
 				188CD2151B53612300E4AE1D /* Images.xcassets */,
 				188CD2171B53612300E4AE1D /* LaunchScreen.xib */,
@@ -117,6 +135,19 @@
 				188CD2231B53612300E4AE1D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		188CD23A1B5362DE00E4AE1D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				188CD22E1B5362D900E4AE1D /* camera.png */,
+				188CD22F1B5362D900E4AE1D /* camera@2x.png */,
+				188CD2301B5362D900E4AE1D /* friends.png */,
+				188CD2311B5362D900E4AE1D /* friends@2x.png */,
+				188CD2321B5362D900E4AE1D /* inbox.png */,
+				188CD2331B5362D900E4AE1D /* inbox@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +231,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				188CD2141B53612300E4AE1D /* Main.storyboard in Resources */,
+				188CD2361B5362D900E4AE1D /* friends.png in Resources */,
+				188CD2371B5362D900E4AE1D /* friends@2x.png in Resources */,
+				188CD2351B5362D900E4AE1D /* camera@2x.png in Resources */,
+				188CD2381B5362D900E4AE1D /* inbox.png in Resources */,
 				188CD2191B53612300E4AE1D /* LaunchScreen.xib in Resources */,
+				188CD2341B5362D900E4AE1D /* camera.png in Resources */,
 				188CD2161B53612300E4AE1D /* Images.xcassets in Resources */,
+				188CD2391B5362D900E4AE1D /* inbox@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +256,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188CD2111B53612300E4AE1D /* ViewController.m in Sources */,
+				188CD2111B53612300E4AE1D /* MainViewController.m in Sources */,
 				188CD20E1B53612300E4AE1D /* AppDelegate.m in Sources */,
 				188CD20B1B53612300E4AE1D /* main.m in Sources */,
+				188CD23D1B536ED700E4AE1D /* InboxViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
