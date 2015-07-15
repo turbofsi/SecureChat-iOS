@@ -7,6 +7,9 @@
 //
 
 #import "InboxViewController.h"
+#import <SAMGradientView/SAMGradientView.h>
+#import <HexColors/HexColors.h>
+#import <Parse/Parse.h>
 
 @interface InboxViewController ()
 
@@ -22,7 +25,19 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        NSLog(@"%@", currentUser.username);
+    } else {
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showLogin"]) {
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,13 +48,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
     return 0;
 }
@@ -98,4 +113,8 @@
 }
 */
 
+- (IBAction)logoutAction:(id)sender {
+    [PFUser logOutInBackground];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+}
 @end
