@@ -23,6 +23,20 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    //Set Friends data source
+    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    PFQuery *query = [self.friendsRelation query];
+    [query orderByAscending:@"username"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"%@", [error.userInfo objectForKey:@"error"]);
+        } else {
+            _friendsUsers = objects;
+            NSLog(@"FriendsView load Friends: %@", _friendsUsers);
+            [self.tableView reloadData];
+        }
+    }];
+    
     if (self.image == nil && self.videoPath.length == 0) {
         self.imagePicker = [[UIImagePickerController alloc] init];
         self.imagePicker.delegate = self;
@@ -38,6 +52,8 @@
     
         [self presentViewController:self.imagePicker animated:NO completion:nil];
     }
+    
+    self.recipients = [[NSMutableArray alloc] init];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -55,12 +71,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return [_friendsUsers count];
 }
 
 #pragma mark - UIimagePicker delegate
@@ -91,15 +107,43 @@
 }
 
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
+    static NSString *cellidentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellidentifier];
+    }
     // Configure the cell...
+    PFUser *user = self.friendsUsers[indexPath.row];
+    cell.textLabel.text = user.username;
+    
+    if ([_recipients containsObject:user.objectId]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
-*/
+
+#pragma mark - tableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    PFUser *friend = [self.friendsUsers objectAtIndex:indexPath.row];
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [self.recipients removeObject:friend.objectId];
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.recipients addObject:friend.objectId];
+    }
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -145,4 +189,11 @@
 }
 */
 
+- (IBAction)cancelAction:(id)sender {
+    self.image = nil;
+    self.videoPath = nil;
+    self.recipients = nil;
+    
+    [self.tabBarController setSelectedIndex:0];
+}
 @end
