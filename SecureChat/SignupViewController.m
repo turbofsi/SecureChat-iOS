@@ -63,7 +63,17 @@
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[error.userInfo objectForKey:@"error"] delegate:self cancelButtonTitle:@"Try again" otherButtonTitles: nil];
                 [alertView show];
             } else {
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                
+                [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error){
+                    if (error) {
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oh no" message:@"Please contact us" delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles: nil];
+                        [alertView show];
+                    } else {
+                        [self.navigationController popToRootViewControllerAnimated:YES];
+                    }
+                }];
+                
+                
             }
         }];
     }

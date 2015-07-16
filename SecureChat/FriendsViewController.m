@@ -1,51 +1,40 @@
 //
-//  InboxViewController.m
+//  FriendsViewController.m
 //  SecureChat
 //
-//  Created by apple on 2015-07-12.
+//  Created by apple on 2015-07-15.
 //  Copyright (c) 2015 YangTech. All rights reserved.
 //
 
-#import "InboxViewController.h"
-#import <SAMGradientView/SAMGradientView.h>
-#import <HexColors/HexColors.h>
-#import <Parse/Parse.h>
+#import "FriendsViewController.h"
+#import "EditFriendsViewController.h"
 
-@interface InboxViewController ()
+@interface FriendsViewController ()
 
 @end
 
-@implementation InboxViewController
+@implementation FriendsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-        NSLog(@"%@", currentUser.username);
-    } else {
-        [self performSegueWithIdentifier:@"showLogin" sender:self];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-        NSLog(@"%@", currentUser.username);
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showLogin"]) {
-        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-    }
+    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    PFQuery *query = [self.friendsRelation query];
+    [query orderByAscending:@"username"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"%@", [error.userInfo objectForKey:@"error"]);
+        } else {
+            _friendsUsers = objects;
+            NSLog(@"FriendsView load Friends: %@", _friendsUsers);
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,26 +45,36 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     // Return the number of rows in the section.
-    return 0;
+    return [self.friendsUsers count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    static NSString *cellidentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellidentifier forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellidentifier];
+    }
     // Configure the cell...
     
+    PFUser *user = _friendsUsers[indexPath.row];
+    cell.textLabel.text = user.username;
+
     return cell;
 }
-*/
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showEditFriends"]) {
+        EditFriendsViewController *viewController = segue.destinationViewController;
+        viewController.friends = [NSMutableArray arrayWithArray:self.friendsUsers];
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -121,8 +120,4 @@
 }
 */
 
-- (IBAction)logoutAction:(id)sender {
-    [PFUser logOut];
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
-}
 @end

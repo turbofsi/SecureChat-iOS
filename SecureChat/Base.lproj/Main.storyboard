@@ -17,7 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hzK-51-Qxf" kind="relationship" relationship="viewControllers" id="hAl-Jl-gzd"/>
-                        <segue destination="YRJ-6g-kzC" kind="relationship" relationship="viewControllers" id="ek4-rI-biv"/>
+                        <segue destination="8Yz-r8-cP2" kind="relationship" relationship="viewControllers" id="ek4-rI-biv"/>
                         <segue destination="fcz-Pk-Udi" kind="relationship" relationship="viewControllers" id="SNX-4t-cfC"/>
                     </connections>
                 </tabBarController>
@@ -79,7 +79,7 @@
                                     <constraint firstAttribute="height" constant="30" id="XoW-9d-8FX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-1U-wlN">
                                 <rect key="frame" x="16" y="229" width="288" height="30"/>
@@ -159,8 +159,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJz-FX-ZgD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJz-FX-ZgD">
                                 <rect key="frame" x="16" y="116" width="288" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="e6G-VX-Dpt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -242,13 +245,13 @@
         <!--Friends-->
         <scene sceneID="6xn-hm-rke">
             <objects>
-                <tableViewController id="YRJ-6g-kzC" sceneMemberID="viewController">
+                <tableViewController id="YRJ-6g-kzC" customClass="FriendsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gCT-Ho-rin">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oqz-aG-bg8">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="oqz-aG-bg8">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oqz-aG-bg8" id="LsJ-Xt-Fb7">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -260,11 +263,44 @@
                             <outlet property="delegate" destination="YRJ-6g-kzC" id="G1N-02-ko6"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Friends" image="friends.png" id="FH3-OF-qK2"/>
+                    <navigationItem key="navigationItem" title="Friends" id="e3r-UB-uxq">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="D59-TG-3PW">
+                            <connections>
+                                <segue destination="FJq-UL-Jvm" kind="push" identifier="showEditFriends" id="gfi-Zf-zsH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p32-fG-hXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1731" y="118"/>
+            <point key="canvasLocation" x="-1199" y="118"/>
+        </scene>
+        <!--Edit Friends-->
+        <scene sceneID="iFv-js-Ypt">
+            <objects>
+                <tableViewController id="FJq-UL-Jvm" customClass="EditFriendsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PK8-AD-nf8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="0Xu-wx-fq1">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Xu-wx-fq1" id="PCQ-HT-Z8k">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FJq-UL-Jvm" id="fQ5-re-gfY"/>
+                            <outlet property="delegate" destination="FJq-UL-Jvm" id="x4L-Bh-iNx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Friends" id="KST-g0-6PR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJQ-VB-IIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-762" y="118"/>
         </scene>
         <!--Camera-->
         <scene sceneID="Jt9-Wk-jJF">
@@ -311,6 +347,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkZ-lt-61w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1740" y="-527"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="GRL-Y6-99r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Yz-r8-cP2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends.png" id="FH3-OF-qK2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ilr-ge-FTi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YRJ-6g-kzC" kind="relationship" relationship="rootViewController" id="Ajr-PW-YOY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LkX-YX-uMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1731" y="118"/>
         </scene>
     </scenes>
     <resources>
