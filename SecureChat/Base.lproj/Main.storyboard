@@ -305,7 +305,7 @@
         <!--Camera-->
         <scene sceneID="Jt9-Wk-jJF">
             <objects>
-                <tableViewController id="fcz-Pk-Udi" sceneMemberID="viewController">
+                <tableViewController id="fcz-Pk-Udi" customClass="CameraViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Bv-uZ-1Y1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

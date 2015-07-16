@@ -25,6 +25,7 @@
 		188CD23D1B536ED700E4AE1D /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD23C1B536ED700E4AE1D /* InboxViewController.m */; };
 		18ABA4081B55F8CD000C3305 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ABA4071B55F8CD000C3305 /* EditFriendsViewController.m */; };
 		18DDA28F1B570DAE0084E11E /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDA28E1B570DAE0084E11E /* FriendsViewController.m */; };
+		18F2C2671B575DAE00D7C238 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2C2661B575DAE00D7C238 /* CameraViewController.m */; };
 		9D07AC625CE7BD338C860834 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226F48D37CFB67753241C8B5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		18ABA4071B55F8CD000C3305 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 		18DDA28D1B570DAE0084E11E /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		18DDA28E1B570DAE0084E11E /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		18F2C2651B575DAE00D7C238 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		18F2C2661B575DAE00D7C238 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		226F48D37CFB67753241C8B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8000DA855BEFCDDAFCDEDD9A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BF8F1CF713D58D184194137F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				18ABA4071B55F8CD000C3305 /* EditFriendsViewController.m */,
 				18DDA28D1B570DAE0084E11E /* FriendsViewController.h */,
 				18DDA28E1B570DAE0084E11E /* FriendsViewController.m */,
+				18F2C2651B575DAE00D7C238 /* CameraViewController.h */,
+				18F2C2661B575DAE00D7C238 /* CameraViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				188CD20B1B53612300E4AE1D /* main.m in Sources */,
 				18DDA28F1B570DAE0084E11E /* FriendsViewController.m in Sources */,
 				18ABA4081B55F8CD000C3305 /* EditFriendsViewController.m in Sources */,
+				18F2C2671B575DAE00D7C238 /* CameraViewController.m in Sources */,
 				188CD23D1B536ED700E4AE1D /* InboxViewController.m in Sources */,
 				181ABAAF1B54CA4400C5BF83 /* LoginViewController.m in Sources */,
 			);
