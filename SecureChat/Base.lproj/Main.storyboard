@@ -329,7 +329,11 @@
                                 <action selector="cancelAction:" destination="fcz-Pk-Udi" id="Kuq-cK-EKs"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="ux7-eV-uA4"/>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="ux7-eV-uA4">
+                            <connections>
+                                <action selector="sendAction:" destination="fcz-Pk-Udi" id="7uy-hI-ThD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTF-7A-pIm" userLabel="First Responder" sceneMemberID="firstResponder"/>

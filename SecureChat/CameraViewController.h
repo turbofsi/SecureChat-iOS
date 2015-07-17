@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface CameraViewController : UITableViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CameraViewController : UITableViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 @property (nonatomic, strong) UIImage *image;
@@ -20,4 +20,9 @@
 @property (nonatomic, strong) NSMutableArray *recipients;
 
 - (IBAction)cancelAction:(id)sender;
+- (IBAction)sendAction:(id)sender;
+
+- (void)uploadImageToParse;
+- (UIImage *)resizeImage:(UIImage *)image WithWidth:(float)width andHeight:(float)height;
+
 @end

@@ -145,55 +145,90 @@
     
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)cancelAction:(id)sender {
+- (void)resetProperty {
     self.image = nil;
     self.videoPath = nil;
     self.recipients = nil;
+}
+
+- (IBAction)cancelAction:(id)sender {
+    [self resetProperty];
     
     [self.tabBarController setSelectedIndex:0];
 }
+
+- (IBAction)sendAction:(id)sender {
+    if (self.image == nil && [self.videoPath isEqualToString:@""]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Please make sure to select photos and videos" delegate:self cancelButtonTitle:@"Try again" otherButtonTitles: nil];
+        alertView.tag = 101;
+        [alertView show];
+    } else {
+        //resize the image and send it
+        [self uploadImageToParse];
+        [self.tabBarController setSelectedIndex:0];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 101) {
+        [self presentViewController:self.imagePicker animated:NO completion:nil];
+    }
+}
+
+
+#pragma mark - upload image to parse
+- (void)uploadImageToParse {
+    
+    NSData *fileData;
+    NSString *fileName;
+    NSString *fileType;
+    
+    if (self.image != nil) {
+        UIImage *uploadImage = [self resizeImage:self.image WithWidth:self.view.bounds.size.width andHeight:self.view.bounds.size.height];
+        fileData = UIImagePNGRepresentation(uploadImage);
+        fileName = @"image.png";
+        fileType = @"image";
+    } else {
+        fileData = [NSData dataWithContentsOfFile:self.videoPath];
+        fileName = @"video.mov";
+        fileType = @"video";
+    }
+    
+    PFFile *file = [PFFile fileWithName:fileName data:fileData];
+    [file saveInBackgroundWithBlock:^(BOOL succeed, NSError *error){
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles: nil];
+            [alertView show];
+        } else {
+            PFObject *message = [PFObject objectWithClassName:@"Message"];
+            [message setObject:file forKey:@"file"];
+            [message setObject:fileType forKey:@"fileType"];
+            [message setObject:self.recipients forKey:@"recipientsIds"];
+            [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
+            [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+            [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+                if (error) {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"Try again" otherButtonTitles: nil];
+                    [alertView show];
+                } else {
+                    //uploading files successful
+                    [self resetProperty];
+                }
+            }];
+        }
+    }];
+}
+
+-(UIImage *)resizeImage:(UIImage *)image WithWidth:(float)width andHeight:(float)height {
+    CGSize newSize = CGSizeMake(width, height);
+    CGRect newRect =  CGRectMake(0, 0, width, height);
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:newRect];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
+}
+
 @end
