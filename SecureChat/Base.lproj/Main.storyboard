@@ -38,15 +38,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFd-TW-N5B">
-                                <rect key="frame" x="0.0" y="5" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yFd-TW-N5B" firstAttribute="leading" secondItem="HzV-LK-Yng" secondAttribute="leadingMargin" constant="-16" id="X1p-78-t4F"/>
-                            <constraint firstItem="yFd-TW-N5B" firstAttribute="top" secondItem="HzV-LK-Yng" secondAttribute="topMargin" constant="5" id="oer-RB-G8R"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yFd-TW-N5B" secondAttribute="trailing" constant="-16" id="r9C-2p-qqb"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="yFd-TW-N5B" secondAttribute="bottom" constant="-5" id="siX-DL-iow"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yFd-TW-N5B" secondAttribute="trailing" constant="-16" id="9MF-d9-1WA"/>
+                            <constraint firstItem="yFd-TW-N5B" firstAttribute="top" secondItem="Bf4-nu-p2B" secondAttribute="bottom" id="RmH-RK-pFd"/>
+                            <constraint firstItem="6qw-0G-FbZ" firstAttribute="top" secondItem="yFd-TW-N5B" secondAttribute="bottom" id="Uhy-dO-949"/>
+                            <constraint firstItem="yFd-TW-N5B" firstAttribute="leading" secondItem="HzV-LK-Yng" secondAttribute="leadingMargin" constant="-16" id="iiT-9c-uWT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2jR-nv-9jd"/>

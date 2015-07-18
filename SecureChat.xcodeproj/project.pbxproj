@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		181ABAAF1B54CA4400C5BF83 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181ABAAE1B54CA4400C5BF83 /* LoginViewController.m */; };
 		181ABAB21B54CA5300C5BF83 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181ABAB11B54CA5300C5BF83 /* SignupViewController.m */; };
+		18429A201B5A1D6200087292 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18429A1F1B5A1D6200087292 /* MediaPlayer.framework */; };
 		18715B6C1B59DC9C00066FF2 /* icon_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18715B681B59DC9C00066FF2 /* icon_image.png */; };
 		18715B6D1B59DC9C00066FF2 /* icon_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18715B691B59DC9C00066FF2 /* icon_image@2x.png */; };
 		18715B6E1B59DC9C00066FF2 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 18715B6A1B59DC9C00066FF2 /* icon_video.png */; };
@@ -49,6 +50,7 @@
 		181ABAAE1B54CA4400C5BF83 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		181ABAB01B54CA5300C5BF83 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		181ABAB11B54CA5300C5BF83 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		18429A1F1B5A1D6200087292 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		18715B681B59DC9C00066FF2 /* icon_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_image.png; sourceTree = "<group>"; };
 		18715B691B59DC9C00066FF2 /* icon_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_image@2x.png"; sourceTree = "<group>"; };
 		18715B6A1B59DC9C00066FF2 /* icon_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_video.png; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18429A201B5A1D6200087292 /* MediaPlayer.framework in Frameworks */,
 				9D07AC625CE7BD338C860834 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +213,7 @@
 		5C6F20B5907F7FD7C507EF67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18429A1F1B5A1D6200087292 /* MediaPlayer.framework */,
 				226F48D37CFB67753241C8B5 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -275,6 +279,7 @@
 				TargetAttributes = {
 					188CD2041B53612300E4AE1D = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 5GGAG6237A;
 					};
 					188CD21D1B53612300E4AE1D = {
 						CreatedOnToolsVersion = 6.4;
@@ -505,6 +510,8 @@
 			baseConfigurationReference = 8000DA855BEFCDDAFCDEDD9A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -513,6 +520,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -521,6 +529,8 @@
 			baseConfigurationReference = BF8F1CF713D58D184194137F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -529,6 +539,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

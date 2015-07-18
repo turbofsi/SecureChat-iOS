@@ -185,7 +185,7 @@
     NSString *fileType;
     
     if (self.image != nil) {
-        UIImage *uploadImage = [self resizeImage:self.image WithWidth:self.view.bounds.size.width andHeight:self.view.bounds.size.height];
+        UIImage *uploadImage = [self resizeImage:self.image WithWidth:300 andHeight:400];
         fileData = UIImagePNGRepresentation(uploadImage);
         fileName = @"image.png";
         fileType = @"image";

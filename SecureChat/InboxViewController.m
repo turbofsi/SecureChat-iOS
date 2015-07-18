@@ -20,11 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.videoPlayer = [[MPMoviePlayerController alloc] init];
     
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
@@ -40,18 +36,20 @@
     if (currentUser) {
         NSLog(@"%@", currentUser.username);
     }
+    if ([PFUser currentUser] != nil) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+        [query whereKey:@"recipientsIds" equalTo:[[PFUser currentUser] objectId]];
+        [query orderByDescending:@"createdAt"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+            if (error) {
+                NSLog(@"error: %@", [error.userInfo objectForKey:@"error"]);
+            } else {
+                self.messages = objects;
+                [self.tableView reloadData];
+            }
+        }];
+    }
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
-    [query whereKey:@"recipientsIds" equalTo:[[PFUser currentUser] objectId]];
-    [query orderByDescending:@"createdAt"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
-        if (error) {
-            NSLog(@"error: %@", [error.userInfo objectForKey:@"error"]);
-        } else {
-            self.messages = objects;
-            [self.tableView reloadData];
-        }
-    }];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -114,6 +112,14 @@
     if ([fileType isEqualToString:@"image"]) {
         self.selectedMessage = message;
         [self performSegueWithIdentifier:@"showImage" sender:nil];
+    } else {
+        PFFile *videoFile = [message objectForKey:@"file"];
+        NSURL *videoURL = [NSURL URLWithString:videoFile.url];
+        [_videoPlayer setContentURL:videoURL];
+        [_videoPlayer prepareToPlay];
+        
+        [self.view addSubview:_videoPlayer.view];
+        [_videoPlayer setFullscreen:YES animated:YES];
     }
 }
 
