@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4CBE70C6-29E7-446B-9603-55550896842E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SecureChat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>12E81ADA973B729A1A334B744F3026E7924AEC81</key>
+		<string>https://github.com/turbofsi/SecureChat-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SecureChat.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>12E81ADA973B729A1A334B744F3026E7924AEC81</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/turbofsi/SecureChat-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>12E81ADA973B729A1A334B744F3026E7924AEC81</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>12E81ADA973B729A1A334B744F3026E7924AEC81</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SecureChat</string>
+		</dict>
+	</array>
+</dict>
+</plist>

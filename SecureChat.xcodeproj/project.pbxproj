@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		181ABAAF1B54CA4400C5BF83 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181ABAAE1B54CA4400C5BF83 /* LoginViewController.m */; };
 		181ABAB21B54CA5300C5BF83 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181ABAB11B54CA5300C5BF83 /* SignupViewController.m */; };
+		18715B6C1B59DC9C00066FF2 /* icon_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18715B681B59DC9C00066FF2 /* icon_image.png */; };
+		18715B6D1B59DC9C00066FF2 /* icon_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18715B691B59DC9C00066FF2 /* icon_image@2x.png */; };
+		18715B6E1B59DC9C00066FF2 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 18715B6A1B59DC9C00066FF2 /* icon_video.png */; };
+		18715B6F1B59DC9C00066FF2 /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18715B6B1B59DC9C00066FF2 /* icon_video@2x.png */; };
+		18715B721B59E1B600066FF2 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18715B711B59E1B600066FF2 /* ImageViewController.m */; };
 		188CD20B1B53612300E4AE1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD20A1B53612300E4AE1D /* main.m */; };
 		188CD20E1B53612300E4AE1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD20D1B53612300E4AE1D /* AppDelegate.m */; };
 		188CD2111B53612300E4AE1D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD2101B53612300E4AE1D /* MainViewController.m */; };
@@ -44,6 +49,12 @@
 		181ABAAE1B54CA4400C5BF83 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		181ABAB01B54CA5300C5BF83 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		181ABAB11B54CA5300C5BF83 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		18715B681B59DC9C00066FF2 /* icon_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_image.png; sourceTree = "<group>"; };
+		18715B691B59DC9C00066FF2 /* icon_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_image@2x.png"; sourceTree = "<group>"; };
+		18715B6A1B59DC9C00066FF2 /* icon_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_video.png; sourceTree = "<group>"; };
+		18715B6B1B59DC9C00066FF2 /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
+		18715B701B59E1B600066FF2 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		18715B711B59E1B600066FF2 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		188CD2051B53612300E4AE1D /* SecureChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecureChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188CD2091B53612300E4AE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188CD20A1B53612300E4AE1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +123,8 @@
 				18DDA28E1B570DAE0084E11E /* FriendsViewController.m */,
 				18F2C2651B575DAE00D7C238 /* CameraViewController.h */,
 				18F2C2661B575DAE00D7C238 /* CameraViewController.m */,
+				18715B701B59E1B600066FF2 /* ImageViewController.h */,
+				18715B711B59E1B600066FF2 /* ImageViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -180,6 +193,10 @@
 		188CD23A1B5362DE00E4AE1D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18715B681B59DC9C00066FF2 /* icon_image.png */,
+				18715B691B59DC9C00066FF2 /* icon_image@2x.png */,
+				18715B6A1B59DC9C00066FF2 /* icon_video.png */,
+				18715B6B1B59DC9C00066FF2 /* icon_video@2x.png */,
 				188CD22E1B5362D900E4AE1D /* camera.png */,
 				188CD22F1B5362D900E4AE1D /* camera@2x.png */,
 				188CD2301B5362D900E4AE1D /* friends.png */,
@@ -289,15 +306,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18715B6E1B59DC9C00066FF2 /* icon_video.png in Resources */,
 				188CD2141B53612300E4AE1D /* Main.storyboard in Resources */,
 				188CD2361B5362D900E4AE1D /* friends.png in Resources */,
+				18715B6C1B59DC9C00066FF2 /* icon_image.png in Resources */,
 				188CD2371B5362D900E4AE1D /* friends@2x.png in Resources */,
 				188CD2351B5362D900E4AE1D /* camera@2x.png in Resources */,
 				188CD2381B5362D900E4AE1D /* inbox.png in Resources */,
 				188CD2191B53612300E4AE1D /* LaunchScreen.xib in Resources */,
+				18715B6D1B59DC9C00066FF2 /* icon_image@2x.png in Resources */,
 				188CD2341B5362D900E4AE1D /* camera.png in Resources */,
 				188CD2161B53612300E4AE1D /* Images.xcassets in Resources */,
 				188CD2391B5362D900E4AE1D /* inbox@2x.png in Resources */,
+				18715B6F1B59DC9C00066FF2 /* icon_video@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18715B721B59E1B600066FF2 /* ImageViewController.m in Sources */,
 				181ABAB21B54CA5300C5BF83 /* SignupViewController.m in Sources */,
 				188CD2111B53612300E4AE1D /* MainViewController.m in Sources */,
 				188CD20E1B53612300E4AE1D /* AppDelegate.m in Sources */,

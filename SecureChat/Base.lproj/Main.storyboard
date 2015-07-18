@@ -25,7 +25,37 @@
             </objects>
             <point key="canvasLocation" x="-2357" y="330"/>
         </scene>
-        <!--SecueChat-->
+        <!--Image View Controller-->
+        <scene sceneID="gs9-4w-cKp">
+            <objects>
+                <viewController id="5WJ-LT-vnG" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bf4-nu-p2B"/>
+                        <viewControllerLayoutGuide type="bottom" id="6qw-0G-FbZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HzV-LK-Yng">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFd-TW-N5B">
+                                <rect key="frame" x="0.0" y="5" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yFd-TW-N5B" firstAttribute="leading" secondItem="HzV-LK-Yng" secondAttribute="leadingMargin" constant="-16" id="X1p-78-t4F"/>
+                            <constraint firstItem="yFd-TW-N5B" firstAttribute="top" secondItem="HzV-LK-Yng" secondAttribute="topMargin" constant="5" id="oer-RB-G8R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yFd-TW-N5B" secondAttribute="trailing" constant="-16" id="r9C-2p-qqb"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="yFd-TW-N5B" secondAttribute="bottom" constant="-5" id="siX-DL-iow"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2jR-nv-9jd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9M-TI-quz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-811" y="-1192"/>
+        </scene>
+        <!--Inbox-->
         <scene sceneID="18D-Vj-dfJ">
             <objects>
                 <tableViewController id="aYz-NA-MmR" customClass="InboxViewController" sceneMemberID="viewController">
@@ -34,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XiT-rB-Cl3">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="XiT-rB-Cl3">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XiT-rB-Cl3" id="ovl-qK-Nss">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -46,7 +76,7 @@
                             <outlet property="delegate" destination="aYz-NA-MmR" id="7t4-rU-Fof"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SecueChat" id="ONY-Fp-zSX">
+                    <navigationItem key="navigationItem" title="Inbox" id="ONY-Fp-zSX">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="g1d-BH-OH4">
                             <connections>
                                 <action selector="logoutAction:" destination="aYz-NA-MmR" id="LfG-ru-UYr"/>
@@ -55,13 +85,14 @@
                     </navigationItem>
                     <connections>
                         <segue destination="yPh-rl-qB0" kind="push" identifier="showLogin" id="PoW-b1-dMM"/>
+                        <segue destination="5WJ-LT-vnG" kind="push" identifier="showImage" id="P9X-kx-og8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fde-gC-5Kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1208" y="-527"/>
+            <point key="canvasLocation" x="-1282" y="-526"/>
         </scene>
-        <!--SecureChat-->
+        <!--Login-->
         <scene sceneID="DdQ-CY-IVm">
             <objects>
                 <viewController id="yPh-rl-qB0" customClass="LoginViewController" sceneMemberID="viewController">
@@ -93,7 +124,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't hava account yet? " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8A-48-Ig5">
                                 <rect key="frame" x="16" y="273" width="192" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pr-uQ-ZHz">
@@ -135,7 +166,7 @@
                             <outletCollection property="gestureRecognizers" destination="nR5-lC-uUK" appends="YES" id="iJ7-bM-H0j"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="SecureChat" id="xIH-Bw-uaM"/>
+                    <navigationItem key="navigationItem" title="Login" id="xIH-Bw-uaM"/>
                     <connections>
                         <outlet property="passwordLabel" destination="YtP-1F-EMB" id="7bJ-f9-CwQ"/>
                         <outlet property="usernameLabel" destination="QQa-xa-6as" id="XLJ-Ay-rqN"/>
@@ -147,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="-811" y="-526"/>
         </scene>
-        <!--SecureChat-->
+        <!--Signup-->
         <scene sceneID="tK0-4N-FKN">
             <objects>
                 <viewController id="gVl-Ol-pSO" customClass="SignupViewController" sceneMemberID="viewController">
@@ -221,7 +252,7 @@
                             <outletCollection property="gestureRecognizers" destination="tyG-qc-znb" appends="YES" id="6iN-sc-GIT"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="SecureChat" id="cVO-1L-MhE"/>
+                    <navigationItem key="navigationItem" title="Signup" id="cVO-1L-MhE"/>
                     <connections>
                         <outlet property="cPassWordLabel" destination="1tB-PK-beU" id="RRO-f1-DA7"/>
                         <outlet property="emailLabel" destination="mDm-ls-Q1S" id="02Y-8S-Ndj"/>
