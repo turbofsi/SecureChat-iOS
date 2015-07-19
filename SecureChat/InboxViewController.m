@@ -109,8 +109,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *message = _messages[indexPath.row];
     NSString *fileType = [message objectForKey:@"fileType"];
+    self.selectedMessage = message;
     if ([fileType isEqualToString:@"image"]) {
-        self.selectedMessage = message;
         [self performSegueWithIdentifier:@"showImage" sender:nil];
     } else {
         PFFile *videoFile = [message objectForKey:@"file"];
@@ -120,6 +120,17 @@
         
         [self.view addSubview:_videoPlayer.view];
         [_videoPlayer setFullscreen:YES animated:YES];
+    }
+    
+    NSMutableArray *recipientsIds = [NSMutableArray arrayWithArray:[self.selectedMessage objectForKey:@"recipientsIds"]];
+    if ([recipientsIds count] == 1) {
+        //deleting the whole message instance
+        [self.selectedMessage deleteInBackground];
+    } else {
+        //remove this recipients from that message instance
+        [recipientsIds removeObject:[[PFUser currentUser] objectId]];
+        [self.selectedMessage setObject:recipientsIds forKey:@"recipientsIds"];
+        [self.selectedMessage saveInBackground];
     }
 }
 
