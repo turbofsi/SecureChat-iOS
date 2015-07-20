@@ -35,6 +35,8 @@
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         NSLog(@"%@", currentUser.username);
+        NSString *title = [NSString stringWithFormat:@"%@'s Inbox", currentUser.username];
+        self.navigationItem.title = title;
     }
     if ([PFUser currentUser] != nil) {
         PFQuery *query = [PFQuery queryWithClassName:@"Message"];
