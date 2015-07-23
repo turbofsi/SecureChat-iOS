@@ -18,8 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.hidesBackButton = YES;
+    UIImageView *imageView = (id)[self.view viewWithTag:102];
+    [self.view sendSubviewToBack:imageView];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setHidden:YES];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -61,4 +70,6 @@
 - (IBAction)showSignup:(id)sender {
     [self performSegueWithIdentifier:@"LogintoSignup" sender:self];
 }
+
+
 @end

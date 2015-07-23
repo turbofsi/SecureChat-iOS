@@ -51,7 +51,7 @@
             }
         }];
     }
-    
+    [self.navigationController.navigationBar setHidden:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

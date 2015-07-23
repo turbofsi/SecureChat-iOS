@@ -30,6 +30,9 @@
 		188CD2381B5362D900E4AE1D /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2321B5362D900E4AE1D /* inbox.png */; };
 		188CD2391B5362D900E4AE1D /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188CD2331B5362D900E4AE1D /* inbox@2x.png */; };
 		188CD23D1B536ED700E4AE1D /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD23C1B536ED700E4AE1D /* InboxViewController.m */; };
+		189B4AE71B6088A60068F7E7 /* icon_x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B4AE51B6088A60068F7E7 /* icon_x.png */; };
+		189B4AE81B6088A60068F7E7 /* icon_x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B4AE61B6088A60068F7E7 /* icon_x@2x.png */; };
+		189FD53D1B5DC22B00F06C1A /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 189FD53C1B5DC22B00F06C1A /* loginBackground.png */; };
 		18ABA4081B55F8CD000C3305 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ABA4071B55F8CD000C3305 /* EditFriendsViewController.m */; };
 		18DDA28F1B570DAE0084E11E /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDA28E1B570DAE0084E11E /* FriendsViewController.m */; };
 		18F2C2671B575DAE00D7C238 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2C2661B575DAE00D7C238 /* CameraViewController.m */; };
@@ -80,6 +83,9 @@
 		188CD2331B5362D900E4AE1D /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		188CD23B1B536ED700E4AE1D /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
 		188CD23C1B536ED700E4AE1D /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		189B4AE51B6088A60068F7E7 /* icon_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_x.png; sourceTree = "<group>"; };
+		189B4AE61B6088A60068F7E7 /* icon_x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_x@2x.png"; sourceTree = "<group>"; };
+		189FD53C1B5DC22B00F06C1A /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBackground.png; sourceTree = "<group>"; };
 		18ABA4061B55F8CD000C3305 /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
 		18ABA4071B55F8CD000C3305 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 		18DDA28D1B570DAE0084E11E /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -198,6 +204,9 @@
 		188CD23A1B5362DE00E4AE1D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				189B4AE51B6088A60068F7E7 /* icon_x.png */,
+				189B4AE61B6088A60068F7E7 /* icon_x@2x.png */,
+				189FD53C1B5DC22B00F06C1A /* loginBackground.png */,
 				1820FB851B5C9B1300FE758F /* default-568@2x.png */,
 				18715B681B59DC9C00066FF2 /* icon_image.png */,
 				18715B691B59DC9C00066FF2 /* icon_image@2x.png */,
@@ -320,12 +329,15 @@
 				188CD2361B5362D900E4AE1D /* friends.png in Resources */,
 				18715B6C1B59DC9C00066FF2 /* icon_image.png in Resources */,
 				188CD2371B5362D900E4AE1D /* friends@2x.png in Resources */,
+				189FD53D1B5DC22B00F06C1A /* loginBackground.png in Resources */,
 				188CD2351B5362D900E4AE1D /* camera@2x.png in Resources */,
 				188CD2381B5362D900E4AE1D /* inbox.png in Resources */,
+				189B4AE81B6088A60068F7E7 /* icon_x@2x.png in Resources */,
 				188CD2191B53612300E4AE1D /* LaunchScreen.xib in Resources */,
 				18715B6D1B59DC9C00066FF2 /* icon_image@2x.png in Resources */,
 				188CD2341B5362D900E4AE1D /* camera.png in Resources */,
 				188CD2161B53612300E4AE1D /* Images.xcassets in Resources */,
+				189B4AE71B6088A60068F7E7 /* icon_x.png in Resources */,
 				188CD2391B5362D900E4AE1D /* inbox@2x.png in Resources */,
 				18715B6F1B59DC9C00066FF2 /* icon_video@2x.png in Resources */,
 			);

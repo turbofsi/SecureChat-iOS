@@ -34,6 +34,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)cancelAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)resignAction:(id)sender {
     for (UITextField *textField in self.inputs) {
@@ -80,12 +83,6 @@
     
                        
 }
-
-
-
-
-
-
 
 
 @end
