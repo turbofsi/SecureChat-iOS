@@ -11,11 +11,14 @@
 #import <HexColors/HexColors.h>
 #import <Parse/Parse.h>
 #import "ImageViewController.h"
+#import <MSCellAccessory/MSCellAccessory.h>
 @interface InboxViewController ()
 
 @end
 
 @implementation InboxViewController
+
+@dynamic refreshControl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +31,9 @@
     } else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(recieveMessage) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,19 +44,7 @@
         NSString *title = [NSString stringWithFormat:@"%@'s Inbox", currentUser.username];
         self.navigationItem.title = title;
     }
-    if ([PFUser currentUser] != nil) {
-        PFQuery *query = [PFQuery queryWithClassName:@"Message"];
-        [query whereKey:@"recipientsIds" equalTo:[[PFUser currentUser] objectId]];
-        [query orderByDescending:@"createdAt"];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
-            if (error) {
-                NSLog(@"error: %@", [error.userInfo objectForKey:@"error"]);
-            } else {
-                self.messages = objects;
-                [self.tableView reloadData];
-            }
-        }];
-    }
+    [self recieveMessage];
     [self.navigationController.navigationBar setHidden:NO];
 }
 
@@ -102,7 +96,9 @@
         cell.imageView.image = [UIImage imageNamed:@"icon_video"];
     }
     
+    UIColor *cellAccessoryColor1 = [UIColor colorWithHexString:@"#D35400"];
     
+    cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DISCLOSURE_INDICATOR color:cellAccessoryColor1];
     return cell;
 }
 
@@ -141,4 +137,32 @@
     [PFUser logOut];
     [self performSegueWithIdentifier:@"showLogin" sender:self];
 }
+
+
+
+
+#pragma mark - helper methods
+- (void)recieveMessage {
+    if ([PFUser currentUser] != nil) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+        [query whereKey:@"recipientsIds" equalTo:[[PFUser currentUser] objectId]];
+        [query orderByDescending:@"createdAt"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+            if (error) {
+                NSLog(@"error: %@", [error.userInfo objectForKey:@"error"]);
+            } else {
+                self.messages = objects;
+                [self.tableView reloadData];
+            }
+            if ([self.refreshControl isRefreshing]) {
+                [self.refreshControl endRefreshing];
+            }
+        }];
+    }
+}
+
+
+
+
+
 @end

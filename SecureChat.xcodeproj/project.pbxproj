@@ -34,6 +34,9 @@
 		189B4AE81B6088A60068F7E7 /* icon_x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B4AE61B6088A60068F7E7 /* icon_x@2x.png */; };
 		189FD53D1B5DC22B00F06C1A /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 189FD53C1B5DC22B00F06C1A /* loginBackground.png */; };
 		18ABA4081B55F8CD000C3305 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ABA4071B55F8CD000C3305 /* EditFriendsViewController.m */; };
+		18BC997C1B65ED4E001196AB /* GravatarUrlBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC997B1B65ED4E001196AB /* GravatarUrlBuilder.m */; };
+		18BC997F1B65F0D1001196AB /* icon_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BC997D1B65F0D1001196AB /* icon_person.png */; };
+		18BC99801B65F0D1001196AB /* icon_person@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BC997E1B65F0D1001196AB /* icon_person@2x.png */; };
 		18DDA28F1B570DAE0084E11E /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDA28E1B570DAE0084E11E /* FriendsViewController.m */; };
 		18F2C2671B575DAE00D7C238 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2C2661B575DAE00D7C238 /* CameraViewController.m */; };
 		9D07AC625CE7BD338C860834 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226F48D37CFB67753241C8B5 /* libPods.a */; };
@@ -88,6 +91,10 @@
 		189FD53C1B5DC22B00F06C1A /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBackground.png; sourceTree = "<group>"; };
 		18ABA4061B55F8CD000C3305 /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
 		18ABA4071B55F8CD000C3305 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
+		18BC997A1B65ED4E001196AB /* GravatarUrlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravatarUrlBuilder.h; sourceTree = "<group>"; };
+		18BC997B1B65ED4E001196AB /* GravatarUrlBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravatarUrlBuilder.m; sourceTree = "<group>"; };
+		18BC997D1B65F0D1001196AB /* icon_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_person.png; sourceTree = "<group>"; };
+		18BC997E1B65F0D1001196AB /* icon_person@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_person@2x.png"; sourceTree = "<group>"; };
 		18DDA28D1B570DAE0084E11E /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		18DDA28E1B570DAE0084E11E /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		18F2C2651B575DAE00D7C238 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -178,6 +185,8 @@
 		188CD2081B53612300E4AE1D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18BC997A1B65ED4E001196AB /* GravatarUrlBuilder.h */,
+				18BC997B1B65ED4E001196AB /* GravatarUrlBuilder.m */,
 				188CD2091B53612300E4AE1D /* Info.plist */,
 				188CD20A1B53612300E4AE1D /* main.m */,
 			);
@@ -204,6 +213,8 @@
 		188CD23A1B5362DE00E4AE1D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				18BC997D1B65F0D1001196AB /* icon_person.png */,
+				18BC997E1B65F0D1001196AB /* icon_person@2x.png */,
 				189B4AE51B6088A60068F7E7 /* icon_x.png */,
 				189B4AE61B6088A60068F7E7 /* icon_x@2x.png */,
 				189FD53C1B5DC22B00F06C1A /* loginBackground.png */,
@@ -330,6 +341,7 @@
 				18715B6C1B59DC9C00066FF2 /* icon_image.png in Resources */,
 				188CD2371B5362D900E4AE1D /* friends@2x.png in Resources */,
 				189FD53D1B5DC22B00F06C1A /* loginBackground.png in Resources */,
+				18BC997F1B65F0D1001196AB /* icon_person.png in Resources */,
 				188CD2351B5362D900E4AE1D /* camera@2x.png in Resources */,
 				188CD2381B5362D900E4AE1D /* inbox.png in Resources */,
 				189B4AE81B6088A60068F7E7 /* icon_x@2x.png in Resources */,
@@ -340,6 +352,7 @@
 				189B4AE71B6088A60068F7E7 /* icon_x.png in Resources */,
 				188CD2391B5362D900E4AE1D /* inbox@2x.png in Resources */,
 				18715B6F1B59DC9C00066FF2 /* icon_video@2x.png in Resources */,
+				18BC99801B65F0D1001196AB /* icon_person@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +406,7 @@
 				18715B721B59E1B600066FF2 /* ImageViewController.m in Sources */,
 				181ABAB21B54CA5300C5BF83 /* SignupViewController.m in Sources */,
 				188CD2111B53612300E4AE1D /* MainViewController.m in Sources */,
+				18BC997C1B65ED4E001196AB /* GravatarUrlBuilder.m in Sources */,
 				188CD20E1B53612300E4AE1D /* AppDelegate.m in Sources */,
 				188CD20B1B53612300E4AE1D /* main.m in Sources */,
 				18DDA28F1B570DAE0084E11E /* FriendsViewController.m in Sources */,

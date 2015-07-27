@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "GravatarUrlBuilder.h"
 
 @interface EditFriendsViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
 

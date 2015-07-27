@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_HexColors 3
 #define COCOAPODS_VERSION_PATCH_HexColors 0
 
+// MSCellAccessory
+#define COCOAPODS_POD_AVAILABLE_MSCellAccessory
+#define COCOAPODS_VERSION_MAJOR_MSCellAccessory 1
+#define COCOAPODS_VERSION_MINOR_MSCellAccessory 1
+#define COCOAPODS_VERSION_PATCH_MSCellAccessory 2
+
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse
 // This library does not follow semantic-versioning,
@@ -53,5 +59,5 @@
 #define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
 #define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 1
 #define COCOAPODS_VERSION_MINOR_TPKeyboardAvoiding 2
-#define COCOAPODS_VERSION_PATCH_TPKeyboardAvoiding 8
+#define COCOAPODS_VERSION_PATCH_TPKeyboardAvoiding 9
 

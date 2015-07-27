@@ -10,7 +10,7 @@
             <objects>
                 <tabBarController id="dt3-jt-5IF" customClass="MainViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ida-49-eCE">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="Ida-49-eCE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

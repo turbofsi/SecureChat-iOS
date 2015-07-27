@@ -8,6 +8,7 @@
 
 #import "FriendsViewController.h"
 #import "EditFriendsViewController.h"
+#import <MSCellAccessory/MSCellAccessory.h>
 
 @interface FriendsViewController ()
 

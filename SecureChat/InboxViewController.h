@@ -17,4 +17,5 @@
 @property (nonatomic, strong) PFObject *selectedMessage;
 @property (nonatomic, strong) MPMoviePlayerController *videoPlayer;
 
+
 @end
